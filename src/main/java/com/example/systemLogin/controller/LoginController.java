@@ -32,7 +32,7 @@ public class LoginController {
 	
 	@GetMapping("/")
     public String dashboard(Model model, HttpServletRequest request) throws UnsupportedEncodingException {
-    	model.addAttribute("nome", CookieService.getCookie(request, "nomeUsuario"));
+    	model.addAttribute("nome", CookieService.getCookie(request, "nameUser"));
     	return "welcome";
     }
 	

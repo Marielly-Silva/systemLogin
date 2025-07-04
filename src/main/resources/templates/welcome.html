@@ -27,7 +27,7 @@
 <body>
 
     <div class="container">
-		<h1>Bem-vindo</h1>
+		<h1>Bem-vindo, <span th:text="${nome != '' ? nome : 'visitante'}"></span>!</h1>
 		<p>Estamos felizes em ter você aqui.</p>
     </div>
 	<div class="mt-4">
