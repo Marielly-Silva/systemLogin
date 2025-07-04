@@ -47,6 +47,12 @@ public class LoginController {
 	    model.addAttribute("erro", "Email ou senha inválidos!");
 	    return "login";
 	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpServletResponse response) throws UnsupportedEncodingException {
+	    CookieService.setCookie(response, "userId", "", 0);
+	    return "login";
+	}
 
 	@GetMapping("/register")
 	public String register() {
