@@ -46,6 +46,9 @@
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </div>
+						<div th:if="${erro}" class="alert alert-danger">
+							<p th:text="${erro}"></p>
+						</div>
                     </form>
 
                     <div class="text-center mt-3">

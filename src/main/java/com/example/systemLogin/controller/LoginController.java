@@ -72,7 +72,7 @@ public class LoginController {
 	public String userRegistration(@Valid User user, BindingResult result, Model model) {
 		if (ur.findByEmail(user.getEmail()) != null) {
 	        model.addAttribute("erro", "Este e-mail já está cadastrado!");
-	        return "cadastro";
+	        return "register";
 	    }
 		String encoder = this.passwordEncoder.encode(user.getPassword());
 		user.setPassword(encoder);
