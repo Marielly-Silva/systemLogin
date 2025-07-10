@@ -31,29 +31,33 @@
                                    placeholder="Digite seu e-mail" required>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="senha" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="password" name="password"
-                                   placeholder="Digite sua senha" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="confirmPassword" class="form-label">Confirme sua Senha</label>
-                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
-                                   placeholder="Confirme sua senha" required>
-                        </div>
-
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Cadastrar</button>
-                        </div>
-						<div th:if="${erro}" class="alert alert-danger">
-							<p th:text="${erro}"></p>
+						<div class="mb-3">
+						    <label for="senha" class="form-label">Senha</label>
+						    <input type="password" class="form-control" id="password" name="password"
+						           placeholder="Digite sua senha" required>
 						</div>
-                    </form>
 
-                    <div class="text-center mt-3">
-                        <a th:href="@{/login}">Voltar</a>
-                    </div>
+						<div class="mb-3">
+						    <label for="confirmPassword" class="form-label">Confirme sua Senha</label>
+						    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+						           placeholder="Confirme sua senha" required>
+						</div>
+
+						<div th:if="${erro1}" class="alert alert-danger" role="alert">
+						    <p th:text="${erro1}"></p>
+						</div>
+						
+						<div th:if="${erro2}" class="alert alert-danger" role="alert">
+						    <p th:text="${erro2}"></p>
+						</div>
+
+						<div class="d-grid">
+						    <button type="submit" class="btn btn-primary">Cadastrar</button>
+						</div>
+
+						<div class="text-center mt-3">
+						    <a th:href="@{/login}">Voltar</a>
+						</div>
 
                 </div>
             </div>

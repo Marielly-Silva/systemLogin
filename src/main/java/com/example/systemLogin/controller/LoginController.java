@@ -70,8 +70,12 @@ public class LoginController {
 	
 	@RequestMapping(value="/register", method = RequestMethod.POST)
 	public String userRegistration(@Valid User user, BindingResult result, Model model) {
+		if (!user.getPassword().equals(user.getConfirmPassword())) {
+	        model.addAttribute("erro1", "As senhas não coincidem!");
+	        return "register";
+	    }
 		if (ur.findByEmail(user.getEmail()) != null) {
-	        model.addAttribute("erro", "Este e-mail já está cadastrado!");
+	        model.addAttribute("erro2", "Este e-mail já está cadastrado!");
 	        return "register";
 	    }
 		String encoder = this.passwordEncoder.encode(user.getPassword());
